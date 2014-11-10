@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+   <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+  <header>
+    <nav>
+        <ul>
+            <li class="comapny_logo">Test Manager</li>
+            <li id="create_test" class="right"><a>Create Test</a></li>
+            <li id="show_test" class="right"><a>Take Test</a></li>
+        </ul>
+    </nav>
+  </header>
+  <div id="create_test_container">
+      <h1>Create Test</h1>
+      <section>
+          <form class="form" name="form_test">
+              <input type="text" name="description" id="description" placeholder="description"/>
+              <!--<button id="add_btn" class="add_btn" name="add_btn"><i class="fa fa-plus-circle"></i></button>-->
+              <button id="add_btn" class="add_btn" name="add_btn">Add</button>
+              <button id="reset_btn" class="reset_btn" name="reset_btn">Clear</button>
+          </form>
+          <button class="submit_btn" ><a href="#">Create Test</a></button>
+
+      </section>
+  </div>
+  <div id="show_test_container">
+  </div>
+  <div id="take_test_container">
+  </div>
+  </body>
+<script src="javascripts/index.js"></script>
+<script href="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    var btn_arr = document.getElementsByTagName('button');
+    for(var i = 0; i < btn_arr.length; i++){
+       btn_arr[i].addEventListener('click', function(event){
+            event.preventDefault();
+        });
+    }
+    document.getElementsByClassName('reset_btn')[0].addEventListener('click', function(){
+        document.getElementsByClassName('form')[0].reset();
+    })
+
+    /*document.getElementsByTagName('button').map(function(ele){
+        ele.addEventListener('click', function(){
+            console.log(ele);
+        });
+    });*/
+</script>
+</html>
